@@ -6,6 +6,7 @@ const fs = require("fs");
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
 const Manager = require("./lib/manager.js");
+const { generateTemplate } = require("./src/displaytemplate.js");
 // const employee = [];
 const engineers = [];
 const interns = [];
@@ -17,7 +18,7 @@ const nextSteps = () => {
     } else if (nextSteps === "add an intern") {
         addIntern();
     } else {
-        const data = template.generateHtml(managers, engineers, interns)
+        const data = generateTemplate(managers, engineers, interns)
         writeToFile(data)
     }
 };

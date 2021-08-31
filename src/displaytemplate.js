@@ -1,27 +1,27 @@
-// const Employee = require("../lib/employee");
+const Employee = require("../lib/employee");
 // const Engineer = require("../lib/engineer");
 // const Intern = require("../lib/intern");
 // const fs = require("fs");
 // const inquirer = require("inquirer");
 
-function generateTemplate(employee) {
+function generateTemplate(Employee) {
     let attribute;
-    if (employee.getRole() == "Manager") {
-        attribute = `Office Number ${employee.getOfficeNumber()}`
-    } else if (employee.getRole() == "Engineer") {
-        attribute = `GitHub page is ${employee.getGithub()}`
+    if (Employee.getRole() == "Manager") {
+        attribute = `Office Number ${Employee.getOfficeNumber()}`
+    } else if (Employee.getRole() == "Engineer") {
+        attribute = `GitHub page is ${Employee.getGithub()}`
     } else {
-        attribute = `Employee attends ${employee.getSchool()}`
+        attribute = `Employee attends ${Employee.getSchool()}`
     }
     return `
     <div class="card">
     <div class="card-body">
-        <h4 class="card-title">${employee.getName()}</h5>
-        <h5 class="card-subtitle mb-2 ">${employee.getRole()} ${icon}</h5>
+        <h4 class="card-title">${Employee.getName()}</h5>
+        <h5 class="card-subtitle mb-2 ">${Employee.getRole()} ${icon}</h5>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Employee ID: ${employee.getId()}</li>
-        <li class="list-group-item">Employee Email: ${employee.getEmail()} <a href="mailto:${employee.getEmail()}">Send Email</a> </li>
+        <li class="list-group-item">Employee ID: ${Employee.getId()}</li>
+        <li class="list-group-item">Employee Email: ${Employee.getEmail()} <a href="mailto:${Employee.getEmail()}">Send Email</a> </li>
         <li class="list-group-item">${attr}</li>
     </ul>
     </div>\n`
