@@ -1,4 +1,4 @@
-const inquirer = rquire("inquirer");
+const inquirer = require("inquirer");
 // const { ENGINE_METHOD_RSA } = require("constants");
 const fs = require("fs");
 
@@ -136,9 +136,9 @@ const addIntern = async () => {
     nextSteps();
 };
 
-const init = async => {
+const init = async () => {
     const answers = await promptManager();
-    const { name, managerID, managerEMail, officeNumber };
+    const { name, managerID, managerEMail, officeNumber } = answers;
     const manager = new Manager(name, managerID, managerEMail, officeNumber);
     managers.push(manager);
     nextSteps();
