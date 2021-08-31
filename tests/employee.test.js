@@ -1,5 +1,5 @@
-const { isMainThread } = require("worker_threads");
-const Employee = require("./lib/employee");
+// const { isMainThread } = require("worker_threads");
+const Employee = require("../lib/employee");
 
 describe("Employee", () => {
     describe("getName", () => {

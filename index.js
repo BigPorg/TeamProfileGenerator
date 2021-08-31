@@ -1,12 +1,12 @@
 const inquirer = rquire("inquirer");
-const { ENGINE_METHOD_RSA } = require("constants");
+// const { ENGINE_METHOD_RSA } = require("constants");
 const fs = require("fs");
 
-const Employee = require("./lib/employee.js");
+// const Employee = require("./lib/employee.js");
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern.js");
 const Manager = require("./lib/manager.js");
-const employee = [];
+// const employee = [];
 const engineers = [];
 const interns = [];
 const managers = [];
@@ -119,7 +119,7 @@ const promptManager = () => {
     ])
 };
 
-// Engineer, Intern. Manager
+// Engineer, Intern, Manager
 const addEngineer = async () => {
     const answers = await promptEngineer();
     const { name, engineerID, engineerEMail, engineerGitHub, nextSteps } = answers;
@@ -145,7 +145,7 @@ const init = async => {
 };
 
 function writeToFile(data) {
-    fs.writeFile("./index.html", data, (err) => 
+    fs.writeFile("./index.html", data, (err) =>
         err ? console.log(error(err)) : console.log('Success!')
     );
 }
